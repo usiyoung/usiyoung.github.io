@@ -911,3 +911,54 @@ details.alert {
 }
 /* Custom Layer
  * -------------------------------------------------- */
+.page-index .post-preview > a > .post-title {
+  font-size: 44px;
+  margin-top: 0;
+}
+.page-index .post-preview > a > .post-title:hover {
+  color: #0d50d1;
+}
+a:hover,
+a:focus {
+  background: d6f1fe;
+  color: #0d50d1;
+}
+.intro-header .post-heading h1 {
+  font-size: 80px;
+}
+.m-2 {
+  margin: 0.5rem 0.5rem 0.5rem 0 !important;
+}
+.btn {
+  font-size: 3px;
+  padding: 8px 13px;
+}
+.page-index .post-preview > .post-meta {
+  margin-bottom: 7px;
+}
+.btn-light {
+  color: #0d50d1;
+  background-color: #d6f1fe;
+  border-radius: 7em;
+  padding: 6px 11px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.btn-info {
+  color: #0d50d1;
+  background-color: #d6f1fe;
+}
+.btn-info:hover,
+.btn-light:hover {
+  color: #fff;
+  background-color: #0d50d1;
+}
+.page-tags .btn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+.page-index .post-preview > .post-meta {
+  font-size: 13px;
+  margin-left: 5px;
+}
