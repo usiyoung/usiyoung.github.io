@@ -983,7 +983,6 @@ a:focus {
 }
 .page-index .post-preview > .post-meta {
   font-size: 13px;
-  margin-left: 5px;
 }
 code {
   background-color: #ebeff2;
@@ -1045,6 +1044,9 @@ p {
   article .container .row blockquote {
     font-size: 10px;
   }
+  .post-preview > a > .post-title {
+    font-size: 1.1rem;
+  }
   .meta {
     font-size: 0.4rem;
     margin-bottom: -4px;
@@ -1057,10 +1059,26 @@ p {
     padding: 72px 0 50px;
   }
   .navbar-custom .navbar-brand {
-    font-size: 0.3rem;
+    font-size: 0.6rem;
+  }
+  .intro-header .site-heading h1 {
+    font-size: 2rem;
+    margin-bottom: -0.5rem;
+    margin-top: -1rem;
   }
   .intro-header .post-heading h1 {
     font-size: 1.5rem;
+  }
+  .page-index .post-preview > a > .post-title,
+  .page-tags .post-preview a .post-title {
+    font-size: 1.2rem;
+  }
+  hr {
+    margin-top: 0;
+    margin-bottom: -0.3rem;
+  }
+  .page-tags .post-preview .post-meta {
+    font-size: 0.6rem;
   }
   footer {
     padding: 30px 0 65px;
