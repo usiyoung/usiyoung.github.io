@@ -629,6 +629,7 @@ figure.highlight pre .string {
 /* Widget Layer
  * -------------------------------------------------- */
 .search-btn {
+  display: none;
   margin-top: -0.1rem;
 }
 .search-btn:focus {
