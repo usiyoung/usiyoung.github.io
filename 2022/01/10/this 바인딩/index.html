@@ -168,8 +168,8 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerBox</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="title">constructor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.changeText = <span class="string">&#x27;usi box&#x27;</span>;</span><br><span class="line">        <span class="built_in">this</span>.box = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.box&#x27;</span>);</span><br><span class="line">		<span class="built_in">this</span>.onClick = <span class="built_in">this</span>.onClick.bind(<span class="built_in">this</span>); <span class="comment">// bind</span></span><br><span class="line">        <span class="built_in">this</span>.box.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> <span class="built_in">this</span>.onClick()) <span class="comment">// 화살표 함수 사용하기</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">onClick</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.box.innerHTML = <span class="built_in">this</span>.changeText; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <br>
 
-<h2 id="결과"><a href="#결과" class="headerlink" title="결과"></a>결과</h2><p><div class="img-item" data-src="https://user-images.githubusercontent.com/85566273/148779694-dc048285-d30e-42f1-ac2b-9133527d86e9.gif" data-sub-html=".caption"><img src="https://user-images.githubusercontent.com/85566273/148779694-dc048285-d30e-42f1-ac2b-9133527d86e9.gif" alt="결과이미지"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">결과이미지</span></div></div></p>
-<h3 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h3><ul>
+<h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><p>원하는 대로 클릭 했을 때 텍스트가 잘 바뀌게 된다.<br><div class="img-item" data-src="https://user-images.githubusercontent.com/85566273/148779694-dc048285-d30e-42f1-ac2b-9133527d86e9.gif" data-sub-html=".caption"><img src="https://user-images.githubusercontent.com/85566273/148779694-dc048285-d30e-42f1-ac2b-9133527d86e9.gif" alt="결과이미지"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">결과이미지</span></div></div></p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
 <li>드림코딩</li>
 <li>모던 자바스크립트</li>
 </ul>
@@ -192,6 +192,8 @@
             
     <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
         <ul class="pagination d-block text-center">
+            
+                <li class="previous page-item d-inline"><a href="/2022/01/15/MVC/" class="page-link float-left">&larr;  Newer</a></li>
             
             
                 <li class="next page-item d-inline"><a href="/2021/12/15/%EB%B3%80%EC%88%98/" class="page-link float-right">Older  &rarr;</a></li>

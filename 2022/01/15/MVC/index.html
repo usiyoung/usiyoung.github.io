@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<!--Description-->
+
+
+
+    <meta name="description" content="front-end developer blog"/>
+
+
+<!--Author-->
+
+    <meta name="author" content="USI YOUNG"/>
+
+
+<!--Open Graph Title-->
+
+    <meta property="og:title" content="MVC"/>
+
+
+<!--Open Graph Description-->
+
+    <meta property="og:description" content="front-end developer blog"/>
+
+
+<!--Open Graph Site Name-->
+    <meta property="og:site_name" content="root"/>
+
+<!--Type page-->
+
+    <meta property="og:type" content="article"/>
+
+
+<!--Page Cover-->
+
+
+    <meta property="og:image" content="https://usiyoung.github.io/img/home-bg.jpg"/>
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+
+
+
+
+    <meta name="twitter:image" content="https://usiyoung.github.io/img/home-bg.jpg"/>
+
+
+<!-- Title -->
+
+<title>MVC | root</title>
+
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+
+<!-- Custom CSS -->
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<!-- Custom Fonts -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
+<link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
+<link href="//fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Gallery -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/featherlight@1.4.0/src/featherlight.css" integrity="sha256-30DV/STftlyQ6v8yaOWlabammvCYtRJERLj/m0b3zno=" crossorigin="anonymous">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/css/lightgallery.min.css">
+
+<!-- favicon -->
+
+<link rel="icon" href="/img/favicon.png"/>
+
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<!-- Head tag -->
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top bg-transparent position-absolute w-100 p-0" id="nav">
+    <div class="container pl-0 pr-0">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand text-white p-1 pl-3" href="/">usi Blog</a>
+        </div>
+        <div class="navbar-nav float-right">
+            <button class="btn btn-link search-btn navbar-item" data-toggle="modal" data-target="#searchModal">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 text-center">
+                <div class="post-heading text-white">
+                    <h1>MVC</h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                
+                    <span class="meta d-inline-block">
+   
+  <!-- Date -->
+  
+  <span class="post-meta-split">&nbsp;|&nbsp;</span>
+  <i class="far fa-calendar-check fa-fw"></i>
+  2022-01-15 
+  <!-- word count and read count -->
+    
+</span>
+  
+                
+                <h3 id="들어가기전에"><a href="#들어가기전에" class="headerlink" title="들어가기전에"></a>들어가기전에</h3><p>mvc 모델에 대한 정의를 읽던 중 controller가 model, view 사이에서 데이터를 받아 전달하기도 하고 사용자의 url을 받는 역할도 한다는데, <strong>막 와닿지가 않았다.</strong> mvc의 <code>view</code>는 프론트를 공부하기 때문에 넘어갔는데  <code>model</code>과 <code>controller</code> 의 역할이 글로 읽어선 잘 구분이 잘 안되었다. 그래서 Codeigniter를 설치해 controller,module,view가 각각 하는 일들을 보여주는 <a href="%5Bhttps://opentutorials.org/course/697/3829%5D(https://opentutorials.org/course/697/3829)">생활코딩</a>의 php codeIgniter편을 정리 해보려한다. </p>
+<p align="center">
+<div class="img-item" data-src="https://user-images.githubusercontent.com/85566273/149613939-6848f45d-b5e8-4795-bee1-6a2ca0dacb07.png" data-sub-html=".caption"><img src="https://user-images.githubusercontent.com/85566273/149613939-6848f45d-b5e8-4795-bee1-6a2ca0dacb07.png" alt="출처: 위키백과"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">출처: 위키백과</span></div></div>
+</p>
+
+
+<h2 id="1-Controller"><a href="#1-Controller" class="headerlink" title="1. Controller"></a>1. Controller</h2><p align="center">
+<img width="264" alt="출처: 생활코딩" src="https://user-images.githubusercontent.com/85566273/149613725-468c88ac-7467-48bb-ba60-cf7eba704d4a.png"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">출처: 생활코딩</span></div>
+</p>
+
+<h3 id="controller-생성"><a href="#controller-생성" class="headerlink" title="controller 생성"></a>controller 생성</h3><blockquote>
+<p>   <code>http://ooo2.org/index.php/topic</code></p>
+</blockquote>
+<p>위의 url에서 topic이라는 경로를 생성하려면 controllers의 디렉토리 안에 topic.php을 생성해주면 된다.<br>그 다음에 topic.php파일안에 규칙을 지켜 내용을 채워넣어야 한다.</p>
+<ol>
+<li>경로명과 클래스명은 같아야 하며 대문자로 작성한다.</li>
+<li>CI_Controller를 상속한다.</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// controllers/topic.php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Topic</span> <span class="keyword">extends</span> <span class="title">CI_Controller</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="string">&#x27;토픽 페이지&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>CodeIgniter는 url이 topic/ 뒤로 경로가 없다면 index 메서드를 참조하게 된다. 위의 url을 입력했을 때 나왔으면 하는 페이지가 있다면 index 메서드에 작성해주면 된다.</p>
+<hr>
+<blockquote>
+<p><code>http://ooo2.org/index.php/topic/get/5</code></p>
+</blockquote>
+<p>topic 경로 뒤에 get 경로를 사용하려면 아까 작성했던 topic.php파일에 <code>get메서드</code>를 생성하면 된다. 이어 get 경로뒤에 숫자를 입력해 페이지를 변경하고 싶다면, get 메서드의 <code>파라미터에 값을 전달</code>해서 페이지를 바꿔줄 수도 있다. 아래 코드처럼 작성하면 get 메서드의 파라미터 값에 따라 위 url을 입력했을 때 토픽과 아이디가 출력된다.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// controllers/topic.php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Topic</span> <span class="keyword">extends</span> <span class="title">CI_Controller</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="string">&#x27;토픽 페이지&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"><span class="variable">$id</span></span>)</span>&#123; <span class="comment">// id === 5</span></span><br><span class="line">		<span class="keyword">echo</span> <span class="string">&#x27;토픽 &#x27;</span>.<span class="variable">$id</span>; <span class="comment">// 토픽 5</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Controller-개념"><a href="#Controller-개념" class="headerlink" title="Controller 개념"></a>Controller 개념</h3><ul>
+<li>controller에 의해 url이 작명된다.</li>
+<li>controller에 의해 웹페이지가 화면에 출력된다.</li>
+</ul>
+<h2 id="2-View"><a href="#2-View" class="headerlink" title="2. View"></a>2. View</h2><p align="center">
+<img width="264" alt="출처: 생활코딩" src="https://user-images.githubusercontent.com/85566273/149613723-2b892b56-9393-4e36-9860-e18a47e82f92.png"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">출처: 생활코딩</span></div>
+</p>
+
+<h3 id="View를-따로-관리해야-하는-이유"><a href="#View를-따로-관리해야-하는-이유" class="headerlink" title="View를 따로 관리해야 하는 이유"></a>View를 따로 관리해야 하는 이유</h3><p>위 글을 보면 controller에서도 토픽 페이지라는 텍스트를 출력할 수 있다. 즉, 시각을 담당하는 코드를 controller에 작성할 수 있다. 그럼에도 html,css,javascript와 같은 시각적인 부분을 담당하는 코드는 view 디렉토리에다가 관리해야 한다. 그 이유는 거대한 페이지가 될 수록 코드가 기하급수적으로 늘어나는데 시각을 담당하는 코드,데이터 로직을 담당하는 코드등을 한 곳에 관리할 경우 코드 관리가 어렵기 때문이다. 이러한 이유로 view는 화면에 보여지는 즉, 프론트가 담당하는 코드를 관리하게 된다.</p>
+<h3 id="view-생성"><a href="#view-생성" class="headerlink" title="view 생성"></a>view 생성</h3><p>view 디렉토리 안에 topic.php를 생성한 후 controller 디렉토리 안에 있는 topic.php으로 돌아가 view를 연결 해준다. 그러면 이번엔 url은 같은 상태에서 controller만을 사용해 화면을 출력 했던 것과 달리 이번엔 controller와 view가 분리된 토픽 페이지가 출력된 화면이 실행된다. 위에서 get 경로를 이용했던 것도 view로 나눠보겠다.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// controller/topic.php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Topic</span> <span class="keyword">extends</span> <span class="title">CI_Controller</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">$this</span>-&gt;load-&gt;view(<span class="string">&#x27;topic&#x27;</span>); <span class="comment">// view/topic.php 실행</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params"><span class="variable">$id</span></span>)</span>&#123; </span><br><span class="line">		<span class="variable">$data</span> = <span class="keyword">array</span>(<span class="string">&#x27;id&#x27;</span> =&gt; <span class="variable">$id</span>);</span><br><span class="line">		<span class="keyword">$this</span>-&gt;load-&gt;view(<span class="string">&#x27;get&#x27;</span>,<span class="variable">$data</span>); <span class="comment">// view/get.php 실행</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// view/get.php</span></span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=<span class="string">&quot;utf-8&quot;</span>&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		토픽 <span class="meta">&lt;?=</span><span class="variable">$id</span><span class="meta">?&gt;</span></span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="View-개념"><a href="#View-개념" class="headerlink" title="View 개념"></a>View 개념</h3><ul>
+<li>사용자에게 시각적인 부분을 보여주는 html,css,javascript 코드를 관리하는 곳이다.</li>
+</ul>
+<h2 id="3-Model"><a href="#3-Model" class="headerlink" title="3. Model"></a>3. Model</h2><p align="center">
+<img width="264" alt="출처: 생활코딩" src="https://user-images.githubusercontent.com/85566273/149613754-e77dc3e4-c46d-4e13-b2d4-ea43e472f6ed.png"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">출처: 생활코딩</span></div>
+</p>
+
+<p>model은 데이터베이스를 담당한다. 데이터를 다루는 로직들을 따로 관리하게 되면서 view와 model을 통해 코드를 뷰와 데이터로 나누어 관리할 수 있기 때문에 코드 관리가 편해진다. 이 글은 mvc 숲의 모양을 이해하지 못해 나무를 살짝 구경하고 있는 중이기 때문에 몇 줄의 코드만 확인하며 controller가 어떻게 model에게 데이터를 받는 지만 확인하겠다.</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// controller/topic.php</span></span><br><span class="line"><span class="keyword">$this</span>-&gt;load-&gt;database();</span><br><span class="line"><span class="keyword">$this</span>-&gt;load-&gt;model(<span class="string">&#x27;topic_model&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>controller에서 view를 받아오는 것과 동일하게 model도 같은 방식이다. controller 디렉토리의 topic.php에서 index 메서드 안에 작성한 코드이다.</p>
+<h3 id="Model-개념"><a href="#Model-개념" class="headerlink" title="Model 개념"></a>Model 개념</h3><ul>
+<li>데이터 로직을 모아두는 곳이며, controller에게 요청받은 데이터를 제공해준다.</li>
+</ul>
+<h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><p align="center">
+<img width="400" alt="출처: 생활코딩" src="https://user-images.githubusercontent.com/85566273/149613903-c353af42-1d1a-4e1d-9d86-3bd3af46c9b2.png"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">출처: 생활코딩</span></div>
+</p>
+
+<ul>
+<li>mvc란 <code>model</code> <code>view</code> <code>controller</code> 의 약자이며, 애플리케이션을 세가지의 역할로 구분한 개발 방법론이다.</li>
+<li>사용자가 controller를 조작하면 controller가 그에 맞는 데이터를 model을 통해 가져오고 리턴한 값을 view에 반영해 사용자에게 전달한다. ===  사용자가 url을 주소창에 쳤을 때 controller가 model에서 데이터베이스를 받아 view에게 받은 데이터를 기반으로 화면이 사용자에게 보여진다.</li>
+<li>사용자로부터 시작해 서버에서 데이터를 받아 뷰로 표현하는 것까지 전반적인 흐름을 코드로 보면서 이해하니 뷰만 공부하다가 눈이 탁 트인 것 같아 흥미롭다. 장황하게는 아니더라도 조금씩 웹 생태계의 견문을 넓히면 뷰,즉 프론트를 설계할 때 좁은 시야로 보는 것에 지나 여러 방면에서 생각하면서 설계할 수 있을 것 같다.</li>
+</ul>
+<br>
+
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li><p>  <a target="_blank" rel="noopener" href="https://opentutorials.org/course/697/3828">생활코딩</a></p>
+</li>
+<li><p>  <a target="_blank" rel="noopener" href="https://ko.wikipedia.org/wiki/%EB%AA%A8%EB%8D%B8-%EB%B7%B0-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC">위키백과</a></p>
+</li>
+<li><p>  <a target="_blank" rel="noopener" href="http://www.ciboard.co.kr/user_guide/kr/">코드 이그나이터 한글 매뉴얼</a></p>
+</li>
+</ul>
+
+            </div>
+
+            <!-- Post information -->
+            
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 post-tags">
+        
+            <i class="fas fa-tag" style="vertical-align: middle;font-size: .8rem;"></i>
+            tags:&nbsp;
+            
+            
+        
+            <a href="/tags/basis/">#basis</a>
+        
+    </div>
+
+            
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+        <ul class="pagination d-block text-center">
+            
+            
+                <li class="next page-item d-inline"><a href="/2022/01/10/this%20%EB%B0%94%EC%9D%B8%EB%94%A9/" class="page-link float-right">Older  &rarr;</a></li>
+            
+        </ul>
+    </div>
+
+
+            
+                <!-- Comments -->
+                
+
+                
+
+            
+
+        </div>
+    </div>
+</article> 
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    <style>
+        #toc-content .toc-link::before {
+            background-color: transparent;
+            max-height: 25px;
+        }
+
+        #toc-content .toc-link.is-active-link::before {
+            background-color: #404040;
+        }
+    </style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <div class="ui-toc dropup scrollspy-body pull-right" style="right: 3%;">
+        <button type="button" class="toc-btn btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+            <i class="fas fa-list"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right p-2"  aria-labelledby="tocLabel">
+            <div class="toc-widget">
+                <div id="toc-content" class="text-truncate">
+                </div>
+            </div>
+            <div class="toc-menu pt-3 pl-4">
+                <a class="expand-toggle d-block py-1" href="#"><span class="expand-text">Expand all</span><span class="close-text" style="display: none;">Collapse all</span></a>
+                <a class="back-to-top d-block py-1" href="#">Back to top</a>
+                <a class="go-to-bottom d-block py-1" href="#">Go to bottom</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '#toc-content',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: 'article',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+        });
+    </script>
+
+
+    
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-center">
+                <ul class="list-inline">
+                    
+
+                    
+
+                    
+                        <li class="list-inline-item">
+                            <a rel="external" href="https://github.com/usiyoung" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <ul class="copyright footer-menu list-inline">
+                    
+                    
+                        <li class="list-inline-item">
+                            
+                            
+                            <a href="/">
+                                
+                                    Home
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/tags">
+                                
+                                    Tags
+                                
+                            </a>
+                        </li>
+                    
+                </ul>
+                <p class="copyright footer-author">
+                    &copy; 12-15-2022 
+                    <a rel="external" class="copyright-link" href="usi" target="_blank">USI YOUNG</a><br/>
+                    Powered by <a rel="external" class="copyright-link" href="https://hexo.io/" target="_blank">Hexo</a>  
+                    <span class="copyright-split">&nbsp;|&nbsp;&nbsp;</span>
+                    Theme <a rel="external" class="copyright-link" href="https://github.com/luswdev/hexo-theme-clean.git" target="_blank">Clean</a>
+                    
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    <!-- jQuery -->
+<script src="//cdn.jsdelivr.net/npm/jquery@2.1.4/dist/jquery.min.js"></script>
+
+<!-- For drop down -->
+<script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+<!-- Gallery -->
+<script src="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/js/lightgallery-all.min.js"></script>
+<!-- Busuanzi -->
+
+
+<!-- Search script -->
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        searchFunc( '/search.xml' , 'searchInput', 'searchResult');
+    });
+</script>
+
+
+
+<script src="/js/main.js"></script>
+
+
+
+    <!-- Search Modal -->
+    <!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content overflow-auto">
+            <div class="modal-header">
+                <input type="text" class="form-control" placeholder="Searching Keywords..." id="searchInput">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div id="searchResult">
+                    <div class="search-empty text-center text-muted p-5">
+                        <i class="far fa-meh"></i>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
