@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<!--Description-->
+
+
+
+    <meta name="description" content="front-end developer blog"/>
+
+
+<!--Author-->
+
+    <meta name="author" content="USI YOUNG"/>
+
+
+<!--Open Graph Title-->
+
+    <meta property="og:title" content="Redux"/>
+
+
+<!--Open Graph Description-->
+
+    <meta property="og:description" content="front-end developer blog"/>
+
+
+<!--Open Graph Site Name-->
+    <meta property="og:site_name" content="root"/>
+
+<!--Type page-->
+
+    <meta property="og:type" content="article"/>
+
+
+<!--Page Cover-->
+
+
+    <meta property="og:image" content="https://usiyoung.github.io/img/home-bg.jpg"/>
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+
+
+
+
+    <meta name="twitter:image" content="https://usiyoung.github.io/img/home-bg.jpg"/>
+
+
+<!-- Title -->
+
+<title>Redux | root</title>
+
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+
+<!-- Custom CSS -->
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<!-- Custom Fonts -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
+<link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
+<link href="//fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Gallery -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/featherlight@1.4.0/src/featherlight.css" integrity="sha256-30DV/STftlyQ6v8yaOWlabammvCYtRJERLj/m0b3zno=" crossorigin="anonymous">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/css/lightgallery.min.css">
+
+<!-- favicon -->
+
+<link rel="icon" href="/img/favicon.png"/>
+
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<!-- Head tag -->
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top bg-transparent position-absolute w-100 p-0" id="nav">
+    <div class="container pl-0 pr-0">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand text-white p-1 pl-3" href="/">usi Blog</a>
+        </div>
+        <div class="navbar-nav float-right">
+            <button class="btn btn-link search-btn navbar-item" data-toggle="modal" data-target="#searchModal">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 text-center">
+                <div class="post-heading text-white">
+                    <h1>Redux</h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                
+                    <span class="meta d-inline-block">
+   
+  <!-- Date -->
+  
+  <span class="post-meta-split">&nbsp;|&nbsp;</span>
+  <i class="far fa-calendar-check fa-fw"></i>
+  2022-02-08 
+  <!-- word count and read count -->
+    
+</span>
+  
+                
+                <h2 id="Redux-란"><a href="#Redux-란" class="headerlink" title="Redux 란?"></a>Redux 란?</h2><p>리덕스는 javascript application들의 상태(state)를 관리하는 방법이다. 리덕스는 리액트에 자주 사용돼 리액트에 의존적인 라이브러리라 생각할 수 있지만, 리덕스와 리액트는 별도의 것이다. 뷰나 바닐라 자바스크립트에도 사용할 수 있다.</p>
+<h3 id="Redux-시작하기"><a href="#Redux-시작하기" class="headerlink" title="Redux 시작하기"></a>Redux 시작하기</h3><ol>
+<li><code>yarn add redux</code> : 리덕스 설치</li>
+<li><code>import &#123;createStore&#125; from &#39;redux&#39;</code>  : createStore 임포트 하기 <br></li>
+</ol>
+<p>store은 데이터(state)를 넣는 곳이다. 다시 한 번 정리하면, <code>리덕스</code>는 <code>state를 관리</code>할 수 있게 도와주는 역할을 하고, <code>데이터</code>들은 <code>store</code>에 들어간다. 리덕스 = state 관리자 / store = 저장소</p>
+<h3 id="Store-and-Reducer"><a href="#Store-and-Reducer" class="headerlink" title="Store and Reducer"></a>Store and Reducer</h3><ul>
+<li><p>store 생성하기</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;createStore&#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> store = createStore();</span><br></pre></td></tr></table></figure>
+<p>  store을 생성하게 되면 <strong>reducer는 함수가 되어야 한다</strong>고 에러가 뜬다. </p>
+  <img width="725" alt="error" src="https://user-images.githubusercontent.com/85566273/152998508-5018ba2c-0f4b-4028-9a98-f52551202560.png"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">error</span></div>
+
+<p>  다시 돌아가 createStore 메서드를 확인해보면 createStore에 reducer를 넣어줘야 한다고 말하고 있다.위 에러에서 reducer는 함수형태라고 했으니 함수형태의 reducer를 전달해주면 된다.</p>
+  <p align="center">
+  <img width="532" alt="reducer를 전달해줘" src="https://user-images.githubusercontent.com/85566273/152998495-83778280-5954-4e1e-b206-31d51f4d0ea3.png"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">reducer를 전달해줘</span></div>
+  </p>    
+
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;createStore&#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> reducer = <span class="function">() =&gt;</span> &#123;&#125;</span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer);</span><br></pre></td></tr></table></figure>
+<p>  여기서 정리 한번, store을 생성하고 함수형태의 reducer를 전달해줘야 한다. 그럼 이 reducer의 역할은 무엇일까?</p>
+</li>
+<li><p>reducer 사용하기<br>  reducer안에다가 리턴값으로 텍스트를 남겨둔 후 store의 데이터를 불러오는 getState메서드를 통해 콘솔을 출력해보면 hello가 출력된다. 즉, reducer는 데이터를 수정가능하게 해준다.</p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reducer = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;hello&#x27;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(store.getState()); <span class="comment">// hello</span></span><br></pre></td></tr></table></figure>
+<p>  데이터를 수정하려면 reducer를 통해 관리하면 된다. 여러 데이터를 한 곳에서 관리할 수 있어 편리함도 준다. </p>
+</li>
+<li><p>state 이니셜라이징</p>
+<p>  reducer에 state를 인자값으로 넣어줄 때 값이 없을 경우 undefined가 나오게 된다. </p>
+  <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reducer = <span class="function">(<span class="params">state</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> state;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(store.getState()); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<p>  이니셜라이징 할 수도 있다. 이니셜라이징을 해주면 인자의 값이 없을 때를 방지해줄 수 있다.</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reducer = <span class="function">(<span class="params">state = <span class="number">0</span></span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> state;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(store.getState()); <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h3><p>action은 위의 reducer와 소통할 수 있게 도와준다. 위의 코드에서 state 값을 변경하기 위해 action을 사용한다. action을 사용해주기 위해 reducer의 두번째 인자에 넣어둔다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reducer = <span class="function">(<span class="params">state = <span class="number">0</span>, action</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> action;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(store.getState()); <span class="comment">// &#123;type:&#x27;@@redux/INIT5.z.z.z.w.a&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>두번째 인자에 넣어준 뒤 action에 값을 넘기려면 dispatch메서드를 사용한다. dispatch 메서드 안에는 객체만 들어갈 수 있고, key를 type으로 넣어줘야 한다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reducer = <span class="function">(<span class="params">state = <span class="number">0</span>, action</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">return</span> action; </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer);</span><br><span class="line"></span><br><span class="line">store.dispatch(&#123;<span class="attr">type</span>: <span class="string">&#x27;plus&#x27;</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(store.getState());<span class="comment">// &#123;type: &#x27;plus&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>dispatch메서드로 값을 던져주면 action이 받아 값을 변경할 수 있다. 이런식으로 dispatch로 던져주면 action이 받고 그걸 토대로 데이터를 수정할 수 있다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reducer = <span class="function">(<span class="params">state = <span class="number">0</span>, action</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span>(action.type === <span class="string">&#x27;plus&#x27;</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> state + <span class="number">1</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(action.type === <span class="string">&#x27;minus&#x27;</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> state - <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer);</span><br><span class="line"></span><br><span class="line">store.dispatch(&#123;<span class="attr">type</span>: <span class="string">&#x27;plus&#x27;</span>&#125;);</span><br><span class="line">store.dispatch(&#123;<span class="attr">type</span>: <span class="string">&#x27;minus&#x27;</span>&#125;);</span><br><span class="line">store.dispatch(&#123;<span class="attr">type</span>: <span class="string">&#x27;plus&#x27;</span>&#125;);</span><br><span class="line">store.dispatch(&#123;<span class="attr">type</span>: <span class="string">&#x27;plus&#x27;</span>&#125;);</span><br><span class="line">store.dispatch(&#123;<span class="attr">type</span>: <span class="string">&#x27;plus&#x27;</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(store.getState()); <span class="comment">// 3 </span></span><br></pre></td></tr></table></figure>
+
+<p>이런식으로 코드를 짤 수도 있다. 플러스 버튼을 누르면 값이 1씩 증가하고 마이너스 버튼을 누르면 값이 1씩 감소한다. </p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reducer = <span class="function">(<span class="params">state = <span class="number">0</span>, action</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(state);</span><br><span class="line">  <span class="keyword">if</span>(action.type === <span class="string">&#x27;plus&#x27;</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> state + <span class="number">1</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(action.type === <span class="string">&#x27;minus&#x27;</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> state - <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer);</span><br><span class="line"></span><br><span class="line">plusBtn.addEventListener(<span class="string">&#x27;click&#x27;</span>,<span class="function">()=&gt;</span> store.dispatch(&#123;<span class="attr">type</span> : <span class="string">&#x27;plus&#x27;</span>&#125;));</span><br><span class="line">minusBtn.addEventListener(<span class="string">&#x27;click&#x27;</span>,<span class="function">()=&gt;</span> store.dispatch(&#123;<span class="attr">type</span> : <span class="string">&#x27;minus&#x27;</span>&#125;));</span><br></pre></td></tr></table></figure>
+
+<p><div class="img-item" data-src="https://user-images.githubusercontent.com/85566273/152998517-b7d88f28-6859-436b-82de-7b7cc7dbcbe7.gif" data-sub-html=".caption"><img src="https://user-images.githubusercontent.com/85566273/152998517-b7d88f28-6859-436b-82de-7b7cc7dbcbe7.gif" alt="상태값 콘솔에 출력"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">상태값 콘솔에 출력</span></div></div></p>
+<p>이제 콘솔창이 아닌 페이지의 숫자를 바꿔볼건데 너무나 쉬운 방법이있다.</p>
+<hr>
+<h3 id="Subscribe"><a href="#Subscribe" class="headerlink" title="Subscribe"></a>Subscribe</h3><p>subscribe는 state값이 변경 됐을 때 호출된다. createStore의 메서드 subscribe를 활용해 action처럼 함수를 전달해주면 된다. </p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reducer = <span class="function">(<span class="params">state = <span class="number">0</span>, action</span>) =&gt;</span> &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(state);</span><br><span class="line">  <span class="keyword">if</span>(action.type === <span class="string">&#x27;plus&#x27;</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> state + <span class="number">1</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(action.type === <span class="string">&#x27;minus&#x27;</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> state - <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> onChange = <span class="function">() =&gt;</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&#x27;hello&#x27;</span>); <span class="comment">// 값이 변경될 때 hello를 출력하게 된다.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">store.subscribe(onChange);</span><br><span class="line"></span><br><span class="line">plusBtn.addEventListener(<span class="string">&#x27;click&#x27;</span>,<span class="function">()=&gt;</span> store.dispatch(&#123;<span class="attr">type</span> : <span class="string">&#x27;plus&#x27;</span>&#125;));</span><br><span class="line">minusBtn.addEventListener(<span class="string">&#x27;click&#x27;</span>,<span class="function">()=&gt;</span> store.dispatch(&#123;<span class="attr">type</span> : <span class="string">&#x27;minus&#x27;</span>&#125;));</span><br></pre></td></tr></table></figure>
+
+<p><div class="img-item" data-src="https://user-images.githubusercontent.com/85566273/152998524-a3248173-ceb6-4733-948e-c885a2bf86f3.gif" data-sub-html=".caption"><img src="https://user-images.githubusercontent.com/85566273/152998524-a3248173-ceb6-4733-948e-c885a2bf86f3.gif" alt="hello 출력"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">hello 출력</span></div></div></p>
+<p>이를 토대로 getState메서드를 통해 state값을 그대로 가져와서 텍스트에 전달해주면 버튼을 클릭할때마다 화면의 숫자가 바뀐다.</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reducer = <span class="function">(<span class="params">state = <span class="number">0</span>, action</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span>(action.type === <span class="string">&#x27;plus&#x27;</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> state + <span class="number">1</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span>(action.type === <span class="string">&#x27;minus&#x27;</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> state - <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> onChange = <span class="function">() =&gt;</span>&#123;</span><br><span class="line">  text.innerHTML = store.getState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">store.subscribe(onChange);</span><br><span class="line"></span><br><span class="line">plusBtn.addEventListener(<span class="string">&#x27;click&#x27;</span>,<span class="function">()=&gt;</span> store.dispatch(&#123;<span class="attr">type</span> : <span class="string">&#x27;plus&#x27;</span>&#125;));</span><br><span class="line">minusBtn.addEventListener(<span class="string">&#x27;click&#x27;</span>,<span class="function">()=&gt;</span> store.dispatch(&#123;<span class="attr">type</span> : <span class="string">&#x27;minus&#x27;</span>&#125;));</span><br></pre></td></tr></table></figure>
+
+<p><div class="img-item" data-src="https://user-images.githubusercontent.com/85566273/152998528-1b7a7930-7e16-4a19-b897-4c9ff0b79b62.gif" data-sub-html=".caption"><img src="https://user-images.githubusercontent.com/85566273/152998528-1b7a7930-7e16-4a19-b897-4c9ff0b79b62.gif" alt="상태 값 출력"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">상태 값 출력</span></div></div></p>
+<h3 id="공식-문서처럼-switch-사용하기-리팩토링"><a href="#공식-문서처럼-switch-사용하기-리팩토링" class="headerlink" title="공식 문서처럼 switch 사용하기(리팩토링?)"></a>공식 문서처럼 switch 사용하기(리팩토링?)</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">onst reducer = <span class="function">(<span class="params">state = <span class="number">0</span>, action</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">switch</span>(action.type)&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;plus&#x27;</span>:</span><br><span class="line">      <span class="keyword">return</span> state + <span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;minus&#x27;</span>:</span><br><span class="line">      <span class="keyword">return</span> state - <span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="keyword">return</span> state;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> onChange = <span class="function">() =&gt;</span>&#123;</span><br><span class="line">  text.innerHTML = store.getState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">store.subscribe(onChange);</span><br><span class="line"></span><br><span class="line">plusBtn.addEventListener(<span class="string">&#x27;click&#x27;</span>,<span class="function">()=&gt;</span> store.dispatch(&#123;<span class="attr">type</span> : <span class="string">&#x27;plus&#x27;</span>&#125;));</span><br><span class="line">minusBtn.addEventListener(<span class="string">&#x27;click&#x27;</span>,<span class="function">()=&gt;</span> store.dispatch(&#123;<span class="attr">type</span> : <span class="string">&#x27;minus&#x27;</span>&#125;));</span><br></pre></td></tr></table></figure>
+
+<h3 id="간단-정리"><a href="#간단-정리" class="headerlink" title="간단 정리"></a>간단 정리</h3><ul>
+<li>redux는 상태를 관리하는 라이브러리이며,</li>
+<li>createStore을 통해 저장소를 만들 수 있고,</li>
+<li>reducer로 저장소안의 데이터를 수정할 수 있으며,</li>
+<li>dispatch 메서드를 통해 action에 던져주면 reducer와 소통할 수 있다.</li>
+<li>상태가 바뀔 때 알려주는 subscribe도 있다.</li>
+</ul>
+<br>
+
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li><p>  <a target="_blank" rel="noopener" href="https://nomadcoders.co/">노마드코더</a></p>
+</li>
+<li><p>  <a target="_blank" rel="noopener" href="https://ko.redux.js.org/introduction/getting-started/">Redux</a></p>
+</li>
+</ul>
+
+            </div>
+
+            <!-- Post information -->
+            
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 post-tags">
+        
+            <i class="fas fa-tag" style="vertical-align: middle;font-size: .8rem;"></i>
+            tags:&nbsp;
+            
+            
+        
+            <a href="/tags/library/">#library</a>
+        
+    </div>
+
+            
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+        <ul class="pagination d-block text-center">
+            
+            
+                <li class="next page-item d-inline"><a href="/2022/02/07/Axios/" class="page-link float-right">Older  &rarr;</a></li>
+            
+        </ul>
+    </div>
+
+
+            
+                <!-- Comments -->
+                
+
+                
+
+            
+
+        </div>
+    </div>
+</article> 
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    <style>
+        #toc-content .toc-link::before {
+            background-color: transparent;
+            max-height: 25px;
+        }
+
+        #toc-content .toc-link.is-active-link::before {
+            background-color: #404040;
+        }
+    </style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <div class="ui-toc dropup scrollspy-body pull-right" style="right: 3%;">
+        <button type="button" class="toc-btn btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+            <i class="fas fa-list"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right p-2"  aria-labelledby="tocLabel">
+            <div class="toc-widget">
+                <div id="toc-content" class="text-truncate">
+                </div>
+            </div>
+            <div class="toc-menu pt-3 pl-4">
+                <a class="expand-toggle d-block py-1" href="#"><span class="expand-text">Expand all</span><span class="close-text" style="display: none;">Collapse all</span></a>
+                <a class="back-to-top d-block py-1" href="#">Back to top</a>
+                <a class="go-to-bottom d-block py-1" href="#">Go to bottom</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '#toc-content',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: 'article',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+        });
+    </script>
+
+
+    
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-center">
+                <ul class="list-inline">
+                    
+
+                    
+
+                    
+                        <li class="list-inline-item">
+                            <a rel="external" href="https://github.com/usiyoung" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <ul class="copyright footer-menu list-inline">
+                    
+                    
+                        <li class="list-inline-item">
+                            
+                            
+                            <a href="/">
+                                
+                                    Home
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/tags">
+                                
+                                    Tags
+                                
+                            </a>
+                        </li>
+                    
+                </ul>
+                <p class="copyright footer-author">
+                    &copy; 12-15-2022 
+                    <a rel="external" class="copyright-link" href="usi" target="_blank">USI YOUNG</a><br/>
+                    Powered by <a rel="external" class="copyright-link" href="https://hexo.io/" target="_blank">Hexo</a>  
+                    <span class="copyright-split">&nbsp;|&nbsp;&nbsp;</span>
+                    Theme <a rel="external" class="copyright-link" href="https://github.com/luswdev/hexo-theme-clean.git" target="_blank">Clean</a>
+                    
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    <!-- jQuery -->
+<script src="//cdn.jsdelivr.net/npm/jquery@2.1.4/dist/jquery.min.js"></script>
+
+<!-- For drop down -->
+<script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+<!-- Gallery -->
+<script src="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/js/lightgallery-all.min.js"></script>
+<!-- Busuanzi -->
+
+
+<!-- Search script -->
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        searchFunc( '/search.xml' , 'searchInput', 'searchResult');
+    });
+</script>
+
+
+
+<script src="/js/main.js"></script>
+
+
+
+    <!-- Search Modal -->
+    <!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content overflow-auto">
+            <div class="modal-header">
+                <input type="text" class="form-control" placeholder="Searching Keywords..." id="searchInput">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div id="searchResult">
+                    <div class="search-empty text-center text-muted p-5">
+                        <i class="far fa-meh"></i>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
