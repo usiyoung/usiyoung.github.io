@@ -136,6 +136,12 @@ pre, code {
   font-family: map-get($base, font-family-code);
 }
 
+
+.header__title{
+  font-family: map-get($base, font-family-header);
+}
+
+
 code {
   font-size: map-get($base, font-size-xs);
   line-height: map-get($base, line-height-sm);
