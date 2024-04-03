@@ -3,7 +3,7 @@ title: '프로세스 생성과 복사 fork()와 exec()'
 tags: '운영체제'
 ---
 
-[널널한 개발자 프로세스 생성과 복사 fork()와 exec()](https://www.youtube.com/watch?v=RzN18na94Wc&list=PLXvgR_grOs1DGFOeD792kHlRml0PhCe9l&index=12)
+[널널한 개발자 - 프로세스 생성과 복사 fork()와 exec()](https://www.youtube.com/watch?v=RzN18na94Wc&list=PLXvgR_grOs1DGFOeD792kHlRml0PhCe9l&index=12)
 
 ### 프로세스와 가상메모리의 관계
 - os는 프로세스 단위로 파일, 자원의 접근을 제어하고 권한을 부여한다. 프로세스가 os에게 자원을 할당받으면 내부에 있는 쓰레드들도 자연스럽게 공유 받을 수 있는 상태가 된다.
