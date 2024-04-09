@@ -36,10 +36,6 @@ tags: "운영체제"
   - 각 프로세스마다 존재
   - 여러 프로세스가 번갈아 실행되는 경우 PCB에 저장된 정보 활용
 
-<p align="center">
-  <img src="https://github.com/usiyoung/cs-storage/assets/85566273/41818c0a-b680-486f-850e-920ce1772d5d" width="100px" height="150px" margin="0 auto"/>
-  <img src="https://github.com/usiyoung/cs-storage/assets/85566273/0840a2da-4515-4d72-8fdf-ef09e3419e8a" width="100px" height="150px"/>
-</p>
  
 ---
 
@@ -96,10 +92,7 @@ tags: "운영체제"
   -  상태정보
   -  스택 영역
 - 나머지 정보는 프로세스에 두고 다른 쓰레드와 공유
-
-<p align="center">
-  <img src="https://github.com/usiyoung/cs-storage/assets/85566273/d71f5bc8-072b-4a74-b1c2-3dcc197bdd27" width="300px"    margin="0 auto"/>
-</p>
+ 
 
 
  
