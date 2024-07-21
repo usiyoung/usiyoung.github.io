@@ -191,8 +191,8 @@ build:
 
 ### 꼭 액션을 통해 체크아웃 해주기
 
-**`actions/checkout@v2`란?**
 
+> **`actions/checkout@v2`란?** <br/><br/>
 > GitHub Actions에서 actions/checkout@v2 액션은 리포지토리의 코드를 CI 서버로 쉽게 내려받고 특정 브랜치로 전환하는 과정을 자동화합니다.
 >
 
@@ -235,6 +235,7 @@ YAML 파일에 **`actions/checkout@v2`** 추가한 후, 다시 Github Actions를
 **빌드 자동화까지 완료**
 <p align="center">
 <img width="890" alt="Monosnap ci: Update yml · barreleye-labs:barreleyescan@06e83e9 2024-07-21 19-15-10" src="https://github.com/user-attachments/assets/23805858-8b69-448f-9e26-08fd7c0fc66c">
+  <br/>
 <img width="881" alt="Monosnap ci: Update yml · barreleye-labs:barreleyescan@06e83e9 2024-07-21 19-06-52" src="https://github.com/user-attachments/assets/628de367-13aa-457e-b49a-6b86a711e25c">
 </p>
 
@@ -325,13 +326,13 @@ jobs:
 
 **맞이할 수 있는 에러**
 
-1. 컨테이너를 삭제하지 않았을 때 마주할 수 있는 에러
+- 컨테이너를 삭제하지 않았을 때 마주할 수 있는 에러
 
 ```bash
 Error response from daemon: conflict: # 이미 존재하는 컨테이너간의 충돌
 ```
 
-2. 이미지를 삭제하지 않았을 때 마주할 수 있는 에러: 용량 문제
+- 이미지를 삭제하지 않았을 때 마주할 수 있는 에러: 용량 문제
 
 ![8](https://github.com/user-attachments/assets/7d29c03a-9c56-4885-8105-0201baa95add)
 
