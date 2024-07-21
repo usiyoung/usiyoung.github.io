@@ -44,6 +44,8 @@ Docker image의 yml 구성이다. 작성하기 전 Github Actions 워크플로�
 
 ## 테스팅 YAML 작성하기
 
+### 스크립트
+
 ```yaml
 name: E2E Test
 
@@ -87,8 +89,6 @@ jobs:
         run: npm run cypress # Cypress 테스트를 실행
 ```
 
-<br/>
-
 **npm run dev 뒤에 `&` 의미**
 
 `&` 를 뒤에 붙이면 백그라운드에서 실행시키고 명령어가 실행되는 동안 터미널이 다음 명령어를 받을 수 있도록 한다. 이렇게 하면 개발 서버가 실행되는 동시에 다른 작업도 진행할 수 있게 되어, 병렬로 작업을 처리할 수 있다.
@@ -96,7 +96,7 @@ jobs:
 
 <br/>
 
-### 코드 푸시하면 깃허브에서 확인할 수 있는 것
+## 위 YAML 파일을 푸시하면 깃허브에서 확인할 수 있는 것
 
 브랜치 `develop`에서 푸시되면 이벤트가 트리거되도록 지정해놓았다. 코드 푸시 후 GitHub Actions 탭에 들어가면 자동으로 테스트 코드가 실행되고 있는 것을 확인할 수 있다.
 
@@ -189,14 +189,14 @@ build:
 
 <br/>
 
-### **꼭 `actions/checkout@v2` 를 통해 체크아웃 해주기**
+### 꼭 액션을 통해 체크아웃 해주기
 
 **`actions/checkout@v2`란?**
 
 > GitHub Actions에서 actions/checkout@v2 액션은 리포지토리의 코드를 CI 서버로 쉽게 내려받고 특정 브랜치로 전환하는 과정을 자동화합니다.
 >
 
-체크아웃을 하지 않아서 시간을 많이 잡아먹었는데, 아래와 같이 빌드하는 과정 중에 Dockerfile을 찾을 수 없다는 로그가 찍혔다. (맨날 이렇게 빌드했는데… 왜 그럴까) 
+체크아웃을 하지 않아서 시간을 많이 잡아먹었는데, 아래와 같이 빌드하는 과정 중에 Dockerfile을 찾을 수 없다는 로그가 찍혔다. (맨날 이렇게 빌드했는데… 왜 그럴까) <br/>
 해결책은 GitHub에 올려둔 코드를 CI 서버에 내려받은 후, 특정 브랜치로 전환하는 과정이 필요했다. 
 이 두 가지를 한 번에 해주는 `actions/checkout@v2`를 사용하면 Dockerfile을 못 찾는 문제가 해결된다.
 
@@ -214,7 +214,7 @@ build:
 <br/>
 
 
-**`actions/checkout@v2` 분석하기**
+### **`actions/checkout@v2` 분석하기**
 
 YAML 파일에 **`actions/checkout@v2`** 추가한 후, 다시 Github Actions를 확인해보자. 이 액션 하나로 별도의 스크립트 작성 없이 간편하게 코드베이스를 CI 서버로 가져올 수 있다.
 
@@ -232,10 +232,10 @@ YAML 파일에 **`actions/checkout@v2`** 추가한 후, 다시 Github Actions를
 <br/>
 
 
-**빌드까지 성공**
+**빌드 자동화까지 완료**
 <p align="center">
-<img width="881" alt="Monosnap ci: Update yml · barreleye-labs:barreleyescan@06e83e9 2024-07-21 19-06-52" src="https://github.com/user-attachments/assets/628de367-13aa-457e-b49a-6b86a711e25c">
 <img width="890" alt="Monosnap ci: Update yml · barreleye-labs:barreleyescan@06e83e9 2024-07-21 19-15-10" src="https://github.com/user-attachments/assets/23805858-8b69-448f-9e26-08fd7c0fc66c">
+<img width="881" alt="Monosnap ci: Update yml · barreleye-labs:barreleyescan@06e83e9 2024-07-21 19-06-52" src="https://github.com/user-attachments/assets/628de367-13aa-457e-b49a-6b86a711e25c">
 </p>
 
 <br/>
@@ -252,7 +252,11 @@ YAML 파일에 **`actions/checkout@v2`** 추가한 후, 다시 Github Actions를
 >   runs-on: ubuntu-latest
 >   needs: cypress-run # cypress-run 작업이 성공적으로 완료된 후 이 작업이 실행된다
 > ```
-> 
+>
+
+
+<br/>
+
 
 ## 배포 YAML 작성하기
 
@@ -310,12 +314,14 @@ jobs:
 
 ![7](https://github.com/user-attachments/assets/99eebfef-ee98-4279-af1a-0eb424671a12)
 
+---
 
-### 배포를 위한 컨테이너 / 이미지 삭제
+### 도커 배포시 이미지 및 컨테이너 삭제에 대한 이야기
 
-**컨테이너 및 이미지를 삭제 해주지 않는다면?**
+**💡컨테이너 및 이미지를 삭제 해주지 않는다면?**
 
 작은 용량의 서버를 사용하고 있는 사용자라면 마주할 수 있는 문제인데, (사실 나의 상황이다) 이미지를 삭제하지 않으면 용량 부족으로 `no space left on device` 에러 로그를 맞이하게 된다. 컨테이너는 삭제하지 않으면 충돌 문제로 교체되지 않는다.
+
 
 **맞이할 수 있는 에러**
 
@@ -329,7 +335,9 @@ Error response from daemon: conflict: # 이미 존재하는 컨테이너간의 �
 
 ![8](https://github.com/user-attachments/assets/7d29c03a-9c56-4885-8105-0201baa95add)
 
-**삭제를 위해 사용할 명령어**
+### 배포를 위한 컨테이너 / 이미지 삭제
+
+**1. 컨테이너 삭제를 위해 사용할 명령어**
 
 ```bash
 docker ps -f "filter"
@@ -338,7 +346,7 @@ docker ps -f "filter"
 - **docker ps**: 현재 실행 중인 컨테이너 목록 조회
 - **-f "filter"**: 특정 조건으로 컨테이너 목록을 필터링
 
-**특정 컨테이너 ID 찾기**
+**2. 특정 컨테이너 ID 찾기**
 
 찾고자 하는 리포지토리의 컨테이너 ID를 찾아주는 명령어다. 아래의 명령어를 변수에 담아 사용하도록한다.
 
@@ -346,7 +354,7 @@ docker ps -f "filter"
 docker ps -f "ancestor=${{ secrets.USERNAME }}/${{ secrets.DOCKER_REPO }}" --format "{{.ID}}"
 ```
 
-**컨테이너 ID 변수화 시킨 후 삭제 해주기**
+**3. 컨테이너 ID 변수화 시킨 후 삭제 해주기**
 
 컨테이너 ID의 로깅과 함께 해당하는 컨테이너를 삭제해준다. 이런 방향으로 삭제해야 하는 도커 이미지도 변수로 담아 삭제 처리 해준다. 
 
@@ -444,7 +452,7 @@ CONTAINER_IDS=$(sudo docker ps -f "ancestor=${{ secrets.USERNAME }}/${{ secrets.
 ## 배럴아이스캔 CI/CD 자동화 결과물
 
 <p align="center">
-<img width="532" alt="Monosnap ci_ Update yaml · barreleye-labs_barreleyescanc5ced78 2024-07-21 20-12-16" src="https://github.com/user-attachments/assets/69e2bf1b-83d8-44a4-b465-06af9d8defd0">
+<img alt="Monosnap ci_ Update yaml · barreleye-labs_barreleyescanc5ced78 2024-07-21 20-12-16" src="https://github.com/user-attachments/assets/69e2bf1b-83d8-44a4-b465-06af9d8defd0">
 </p>
 
 
