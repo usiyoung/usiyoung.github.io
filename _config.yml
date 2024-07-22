@@ -173,7 +173,8 @@ analytics:
   ## Google Analytics
   google:
     tracking_id : G-SYLP5520ZW
-    anonymize_ip: false # Anonymize IP tracking for Analytics
+    measurement_id : G-SYLP5520ZW
+    anonymize_ip: true # Anonymize IP tracking for Analytics
 
 
 ## => Build
