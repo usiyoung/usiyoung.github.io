@@ -7,6 +7,7 @@
 		gtag('js', new Date());
 
 		gtag('config', '{{ site.analytics.google.tracking_id }}');
+    gtag('config', '{{ site.analytics.google.measurement_id }}');
 		{% if site.analytics.google.anonymize_ip == true %}
 			gtag('config', '{{ site.analytics.google.tracking_id }}', { 'anonymize_ip': true });
 		{% endif %}
