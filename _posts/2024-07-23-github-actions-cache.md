@@ -85,12 +85,14 @@ cypress-run:
 5. npm run dev 명령어를 실행하여 애플리케이션을 시작하고, CI=true 환경 변수를 설정한다.
 6. npm run test 명령어를 실행하여 Cypress 테스트를 수행한다.
 
-**캐시 로그 예시** 
+### 캐시 로그 예시
 
-아래는 캐시 히트 여부를 확인하는 로그이다. 캐시가 히트되면 `npm cache hit!` 메시지를 출력하고, 캐시가 미스되면 `npm cache missed!` 메시지를 출력한다.
+아래는 캐시 히트 여부를 확인하는 로그이다. 캐시가 히트되면 `npm cache hit!` 메시지를 출력하고, <br/> 캐시가 미스되면 `npm cache missed!` 메시지를 출력한다.
 
 - 저장된 캐시가 있을 경우
   - <img  alt="1" src="https://github.com/user-attachments/assets/e7cc5583-bf4f-41ea-8341-1acd48d00a11">
+
+<br/>
 
 - 저장된 캐시가 없을 경우
   -  캐시가 없을 경우 `Post Run actions/cache@v3` 구간에서 새로 저장한다. 이 저장물은 Github Actions 의 Cache 메뉴에서 확인할 수 있다.
@@ -117,10 +119,14 @@ GitHub Actions의 Caches 메뉴를 통해 현재 사용 중인 캐시들을 확�
 
 - 캐시 추가하기 전 빌드 시간: 1분 19초
   - ![6](https://github.com/user-attachments/assets/e2dff140-744b-4768-9555-64993e21728c)
+
+    <br/>
     
 - 캐시 추가 후 늘어난 빌드 시간: 3분 4초
   - ![7](https://github.com/user-attachments/assets/1d90b391-fb27-4d31-895c-5705220acdc5)
 
+
+    <br/>
     
 - 캐시 저장 후 줄어든 빌드 시간: 47초
   - ![8](https://github.com/user-attachments/assets/8b0565f6-aa0f-45d4-936b-19fe08068ddd)
@@ -171,7 +177,7 @@ Docker 이미지를 빌드하는 과정에서도 캐시를 활용하여 빌드 �
 - 캐시 추가하기 전 빌드 시간: 1분 53초
   - <img alt="10" width="400" src="https://github.com/user-attachments/assets/ccf8f7d3-2450-41fb-92bd-073f313c8ec2">
 
-  
+  <br/>
     
 - 캐시 추가한 빌드 시간: 7초
   - ![11](https://github.com/user-attachments/assets/8db6e69c-1ee6-4e2f-aa03-7d0f054a27bb)
@@ -185,7 +191,7 @@ Docker 캐시를 적용한 후 빌드 시간이 1분 53초(113초)에서 7초로
 - 캐시 전략 전: 5분 14초 (314초)
   - ![12](https://github.com/user-attachments/assets/c1004322-b8ec-4810-b806-66296dff388c)
 
-
+<br/>
 
 - 캐시 전략 적용 후: 2분 53초 (173초)
   - <img alt="13" src="https://github.com/user-attachments/assets/9c9d3776-af90-4259-8c4e-9a4cce84b81c">
