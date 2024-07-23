@@ -3,8 +3,6 @@ title: 'Github Actions 캐시 전략을 통한 빌드 시간 단축'
 tags: Frontend
 ---
 
-# Github Actions 캐시 전략을 통한 빌드 시간 단축
-
 ## **들어가기 앞서**
 
 Github Actions을 통해 배럴아이스캔의 CI/CD 파이프라인을 구축했었다([**GitHub Actions 배포 자동화**](https://www.notion.so/Github-Actions-7e8124ecbb9a4e6fbb9790babb944995?pvs=21)). 그 이후, 눈에 띄는(?) 배포 시간 덕분에 좋은 경험을 공유하려고 한다. 배포 시간을 길게 하는 요소로는 Node.js와 Docker를 사용하는 환경에서 매번 모든 의존성을 새로 설치하고 빌드하는 과정이 있었는데, 이러한 문제를 해결하기 위해 GitHub Actions에서 제공하는 캐시 기능을 활용하여 빌드 시간을 단축하는 방법을 시도해 보았다.
