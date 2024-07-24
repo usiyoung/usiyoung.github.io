@@ -5,7 +5,7 @@ tags: Frontend
 
 ## **들어가기 앞서**
 
-Github Actions을 통해 배럴아이스캔의 CI/CD 파이프라인을 구축했었다([**GitHub Actions 배포 자동화**](https://www.notion.so/Github-Actions-7e8124ecbb9a4e6fbb9790babb944995?pvs=21)). 그 이후, 눈에 띄는(?) 배포 시간 덕분에 좋은 경험을 공유하려고 한다. 배포 시간을 길게 하는 요소로는 Node.js와 Docker를 사용하는 환경에서 매번 모든 의존성을 새로 설치하고 빌드하는 과정이 있었는데, 이러한 문제를 해결하기 위해 GitHub Actions에서 제공하는 캐시 기능을 활용하여 빌드 시간을 단축하는 방법을 시도해 보았다.
+Github Actions을 통해 배럴아이스캔의 CI/CD 파이프라인을 구축했었다([**GitHub Actions 배포 자동화**](https://usiyoung.github.io/2024/07/21/github-actions-init.html)). 그 이후, 눈에 띄는(?) 배포 시간 덕분에 좋은 경험을 공유하려고 한다. 배포 시간을 길게 하는 요소로는 Node.js와 Docker를 사용하는 환경에서 매번 모든 의존성을 새로 설치하고 빌드하는 과정이 있었는데, 이러한 문제를 해결하기 위해 GitHub Actions에서 제공하는 캐시 기능을 활용하여 빌드 시간을 단축하는 방법을 시도해 보았다.
 
 ## **구성**
 
@@ -19,7 +19,7 @@ Github Actions을 통해 배럴아이스캔의 CI/CD 파이프라인을 구축�
 
 ---
 
-### 입금(캐시)전 마지막 이미지
+### 입금(캐시)전 마지막 빌드
 ![0](https://github.com/user-attachments/assets/cec63479-8eeb-430a-87f4-af3cc400e176)
 
 ---
@@ -115,23 +115,24 @@ GitHub Actions의 Caches 메뉴를 통해 현재 사용 중인 캐시들을 확�
 처음 캐시를 저장하기 전에는 시간이 오히려 더 오래 걸린다. 아까 봤던 로그를 다시 확인해보자. 캐시가 되지 않아 `cache missed!` 로그가 보인 뒤 `Post Run actions/cache@v3` 구간에서 기존에는 1분 초반대에서 마무리 되던 테스트가 2분이 넘게 걸린다. 이후에 저장된 캐시가 있다면 다음 빌드에서는 대폭 줄은 빌드 시간을 확인할 수 있다.
 <img   alt="5" src="https://github.com/user-attachments/assets/98abda35-ca1a-4951-a58c-d65d3ffd4fa1">
 
+---
+
 ## Node.js 의존성 캐시 적용 결과
 
 - 캐시 추가하기 전 빌드 시간: 1분 19초
-  - ![6](https://github.com/user-attachments/assets/e2dff140-744b-4768-9555-64993e21728c)
-
+  - <img width="300" src="https://github.com/user-attachments/assets/e2dff140-744b-4768-9555-64993e21728c"/>
+    
     <br/>
     
 - 캐시 추가 후 늘어난 빌드 시간: 3분 4초
-  - ![7](https://github.com/user-attachments/assets/1d90b391-fb27-4d31-895c-5705220acdc5)
-
+  - <img width="300" src="https://github.com/user-attachments/assets/1d90b391-fb27-4d31-895c-5705220acdc5"/>
 
     <br/>
     
 - 캐시 저장 후 줄어든 빌드 시간: 47초
-  - ![8](https://github.com/user-attachments/assets/8b0565f6-aa0f-45d4-936b-19fe08068ddd)
-  
+  - <img width="300" src="https://github.com/user-attachments/assets/8b0565f6-aa0f-45d4-936b-19fe08068ddd"/>
     
+<br/>
 
 이처럼 처음 캐시를 저장하기 전까지는 시간이 오히려 더 오래 걸린다. 하지만 캐시가 저장된 이후 빌드 시간이 1분 19초에서 47초로 줄어들었다. 이는 32초가 줄어든 것으로, 약 40.5%의 빌드 시간이 단축 되었다.
 
@@ -175,12 +176,14 @@ Docker 이미지를 빌드하는 과정에서도 캐시를 활용하여 빌드 �
 캐시 전략을 적용한 후, 빌드 시간이 크게 단축됐다. 아래는 새로운 캐시 설정을 적용한 후의 빌드 결과이다.
 
 - 캐시 추가하기 전 빌드 시간: 1분 53초
-  - <img alt="10" width="400" src="https://github.com/user-attachments/assets/ccf8f7d3-2450-41fb-92bd-073f313c8ec2">
+  - <img alt="10" width="300" src="https://github.com/user-attachments/assets/ccf8f7d3-2450-41fb-92bd-073f313c8ec2">
 
   <br/>
     
 - 캐시 추가한 빌드 시간: 7초
-  - ![11](https://github.com/user-attachments/assets/8db6e69c-1ee6-4e2f-aa03-7d0f054a27bb)
+  - <img width="300" src="https://github.com/user-attachments/assets/8db6e69c-1ee6-4e2f-aa03-7d0f054a27bb" />
+
+  <br/>
 
 Docker 캐시를 적용한 후 빌드 시간이 1분 53초(113초)에서 7초로 줄어들었다. 이는 106초가 단축된 것으로, 약 93.8%의 빌드 시간 단축을 의미한다.
 
@@ -189,12 +192,13 @@ Docker 캐시를 적용한 후 빌드 시간이 1분 53초(113초)에서 7초로
  새로운 캐시 전략을 적용한 결과 약 44.9%의 빌드 시간 단축할 수 있었다. 
 
 - 캐시 전략 전: 5분 14초 (314초)
-  - ![12](https://github.com/user-attachments/assets/c1004322-b8ec-4810-b806-66296dff388c)
+  - <img src="https://github.com/user-attachments/assets/c1004322-b8ec-4810-b806-66296dff388c"/> 
+
 
 <br/>
 
 - 캐시 전략 적용 후: 2분 53초 (173초)
-  - <img alt="13" src="https://github.com/user-attachments/assets/9c9d3776-af90-4259-8c4e-9a4cce84b81c">
+  - <img  alt="13" src="https://github.com/user-attachments/assets/9c9d3776-af90-4259-8c4e-9a4cce84b81c">
 
 
 
