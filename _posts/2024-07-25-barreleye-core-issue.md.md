@@ -147,4 +147,6 @@ if toInfo != nil && toInfo.Balance >= 10 {
 이메일과 깃허브를 통해 상장 계획이나 구동방법에 대해서 물어보시는 연락이 많이 왔는데 이것이 개발 후 하나의 즐거움이였다.구동 방법이 어렵다면  앞으로도 이러한 경험을 바탕으로 더욱 견고하고 효율적인 시스템을 개발하기 위해 노력할 것이다.
 <br/>
 
-배럴아이를 구동하면서 어려운 점이 있거나 에러사항이 있다면 GitHub 이슈나 메일을 통해 알려주세요. rusvo님이 올려주신 [Github Issue](https://github.com/barreleye-labs/barreleye/issues/94)
+배럴아이를 구동하면서 어려운 점이 있거나 에러사항이 있다면 GitHub 이슈나 메일을 통해 알려주세요.
+<br/>
+rusvo님이 올려주신 [Github Issue](https://github.com/barreleye-labs/barreleye/issues/94)
