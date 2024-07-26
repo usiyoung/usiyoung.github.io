@@ -1,6 +1,9 @@
 ---
 title: 'Github Actions 캐시 전략을 통한 빌드 시간 단축'
-tags: Frontend
+tags: 
+  - CI/CD
+  - 프로젝트
+  - 배럴아이
 ---
 
 ## **들어가기 앞서**
