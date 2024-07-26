@@ -1,6 +1,9 @@
 ---
 title: "GitHub Actions 배포 자동화 (with 맞이한 에러들)"
-tags: Frontend
+tags: 
+  - CI/CD
+  - 프로젝트
+  - 배럴아이
 ---
 
 ## 들어가기 앞서
