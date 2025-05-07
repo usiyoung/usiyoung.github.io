@@ -12,7 +12,7 @@ Docker를 활용해 Node.js 애플리케이션을 컨테이너화할 때, 효율
 
 배포를 진행할 때마다 디스크 용량 부족으로 인해 빌드가 실패하는 문제가 발생했다. 디스크 용량을 단순히 늘리는 것도 하나의 해결책이 될 수 있지만, 장기적으로는 최적화를 통해 이 문제를 해결하는 것이 더 낫다고 판단했다. 그래서 Docker 이미지의 크기를 줄여 최적화하는 방법을 모색하게 되었고, 그 과정을 이번 글에서 공유해보려고 한다.
 <p align="center">
-<img alt="0" src="https://github.com/user-attachments/assets/8d5dbf07-db77-41a4-ae65-69868d2e0724">
+<img alt="0" src="/assets/posts/2024-08-22-docker-image-size/0.png">
 </p>
 
 ## 기존 Dockerfile의 문제점
@@ -91,9 +91,9 @@ Dockerfile을 멀티스테이지 빌드로 구성하여 빌드와 실행 환경�
 Dockerfile 변경 후 빌드 시간이 112초 → 79.6초로 **32.4초** 감소했다.
 
 <p align="center">
-<img  width="402"   alt="1" src="https://github.com/user-attachments/assets/74392b4f-2636-4551-9a09-38eff5def82c">
+<img  width="402"   alt="1" src="/assets/posts/2024-08-22-docker-image-size/1.png">
 
-<img  width="402"  alt="2" src="https://github.com/user-attachments/assets/b27e78d4-d8d1-4f6b-ab33-898a4626ffc2">
+<img  width="402"  alt="2" src="/assets/posts/2024-08-22-docker-image-size/2.png">
 </p>
 
 
@@ -104,7 +104,7 @@ Dockerfile 변경 후 빌드 시간이 112초 → 79.6초로 **32.4초** 감소�
 Dockerfile 변경 후 이미지 사이즈가 2.26GB → 427MB로 **1.833GB** 축소되었다.
 
 <p align="center">
-<img width="602" alt="3" src="https://github.com/user-attachments/assets/b75a5c72-2ed4-48c6-a0e3-c175c29feb11">
+<img width="602" alt="3" src="/assets/posts/2024-08-22-docker-image-size/3.png">
 </p>
 
 
@@ -114,7 +114,7 @@ Dockerfile 변경 후 이미지 사이즈가 2.26GB → 427MB로 **1.833GB** 축
 Dockerfile 변경 전 디스크 사용량이 97%정도로 아슬아슬하게 사용하고 있었다. 변경 후 67%로 감소 되었다.
 
 <p align="center">
-<img width="473" alt="4" src="https://github.com/user-attachments/assets/cc4630bd-b943-4cfe-a06d-ad7fe510778b">
+<img width="473" alt="4" src="/assets/posts/2024-08-22-docker-image-size/4.png">
 </p>
 
 ### 끝으로
