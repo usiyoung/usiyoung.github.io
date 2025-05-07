@@ -56,7 +56,7 @@ png, jpg 이미지를 webp로 변환해 이미지 용량을 줄이는 것은 웹
 
    위 속성을 지정해준 후 첫 로딩시 이미지 리소스들이 줄긴했지만, 예상치 못하게 계속 로드 되는 이미지들도 있었다. 그 이유는 `img` 태그가 아닌 `배경 이미지(background-image)`였기 때문이다. `css` 로 불려오는 이미지들에 대해 원하는 시점에 요청하기 위해 `IntersectionObserver` 를 활용해 수동으로 Lazy Loading 을 해주기로 했다.
 
-   ![image.png](./image.png)
+   ![image.png](/image.png)
 
 2. IntersectionObserver를 활용한 수동 Lazy Loading
 
