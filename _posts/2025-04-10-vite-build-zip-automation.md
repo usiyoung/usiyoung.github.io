@@ -88,7 +88,7 @@ rollupOptions: {
 - `npm run build:prod` 실행
 - `/dist/wallet-1.0.18-250410-11` 폴더 생성
 - `/dist/wallet-1.0.18-250410-11.zip` 압축 파일 생성
-  ![image.png](/assets/2025-04-10-vite-build-zip-automation/image.png)
+  ![image.png](/assets/posts/2025-04-10-vite-build-zip-automation/image.png)
 
 <br/>
 
