@@ -89,8 +89,6 @@ png, jpg 이미지를 webp로 변환해 이미지 용량을 줄이는 것은 웹
 
    이때 data-src 속성에 이미지 경로를 넣어두고, 화면에 노출되는 시점에 src 속성을 동적으로 할당하는 방식이다.
 
-   ![IntersectionOberserver entries](/assets/posts/2025-05-07-web-lighthouse/image%201.png)
-
 
    **IntersectionObserver 세밀 제어: rootMargin 옵션**
 
